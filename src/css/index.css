@@ -70,3 +70,11 @@ header{
     margin: 0
 }
 
+/* User's photo */
+.user-post-photo{
+    width: 375px;
+    height: 375px;
+}
+
+/*  */
+
