@@ -3,6 +3,7 @@ html, body {
     padding: 0;
 }
 
+/* Header section of Oldagram */
 header{
     display: flex;
     margin: 0 auto;
@@ -11,7 +12,7 @@ header{
     align-items: flex-start;
     gap: 183px;
 
-    padding: 16px 16px 17px 15px;
+    padding: 16px 16px 5px 15px;
 
     height: 67px;
     width: 375px;
@@ -20,11 +21,52 @@ header{
 
 #oldagram-logo{
     width: 127px;
-    height: 34px;
+    height: 50px;
+    margin: 0px;
 }
 
 #avatar-logo{
     width: 34px;
     height: 34px;
     border-radius: 50%;
+    margin: 0px;
 }
+
+/* User profile section */
+.user-profile-top{
+    display: flex;
+    width: 375px;
+    display: row;
+
+    padding: 10px; 
+    
+}
+
+.user-avatar{
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+}
+
+.user-real-details{
+    width: 307px;
+    height: 32px;
+    color: #000;
+    font-family: "Source Sans Pro";
+    font-style: normal;
+    padding-left: 10px;
+    padding-top: 3px;
+}
+
+.user-real-details > h2{
+    font-size: 13px;
+    font-weight: 700;
+    margin: 0px;
+}
+
+.user-real-details > h3{
+    font-size: 12px;
+    font-weight: 400;
+    margin: 0
+}
+
