@@ -94,4 +94,14 @@ header{
     width: 20px;
 }
 
+/* Number of likes on the user's post */
+#user-likes{
+    width: 343px;
+    font-size: 13px;
+    font-family: "Source Sans Pro";
+    font-style: normal;
+    font-weight: 700;
+    padding-left: 5px;
+}
 
+/* User's account name and comment*/
