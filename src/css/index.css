@@ -3,3 +3,28 @@ html, body {
     padding: 0;
 }
 
+header{
+    display: flex;
+    margin: 0 auto;
+
+    justify-content: center;
+    align-items: flex-start;
+    gap: 183px;
+
+    padding: 16px 16px 17px 15px;
+
+    height: 67px;
+    width: 375px;
+    border-bottom: 1px solid #c6c6c6;
+}
+
+#oldagram-logo{
+    width: 127px;
+    height: 34px;
+}
+
+#avatar-logo{
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+}
