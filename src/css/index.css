@@ -3,6 +3,14 @@ html, body {
     padding: 0;
 }
 
+#root{
+    margin: 0 auto;
+    width: 375px;
+
+    display: flex;
+    flex-direction: column;
+}
+
 /* Header section of Oldagram */
 header{
     display: flex;
