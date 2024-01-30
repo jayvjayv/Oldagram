@@ -77,10 +77,25 @@ function getEngagements(data) {
 
   divOne.setAttribute("class", "user-engagements");
 
+  heartImage.addEventListener("click", function(){
+    if(data.liked){
+        
+        data.liked = false;
+
+        root.innerHTML = "";
+        
+        data.likes = data.likes - 1;
+        heartImage.setAttribute("src", "./src/images/icon-heart.png");
+
+        for (let i = 0; i < posts.length; i++) {
+            createPost(posts[i]);
+        }
+    }
+  })
+
+
   if (data.liked) {
     heartImage.setAttribute("src", "./src/images/red-heart-icon.webp");
-
-
   } else {
     heartImage.setAttribute("src", "./src/images/icon-heart.png");
   }
