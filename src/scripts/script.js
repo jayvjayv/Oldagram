@@ -4,7 +4,7 @@ const root = document.getElementById("root");
 function createPost(data) {
   root.append(getProfile(data));
   root.append(getPost(data));
-  root.append(getEngagements());
+  root.append(getEngagements(data));
   root.append(getLikes(data));
   root.append(getAccountDetails(data));
   root.append(addDivider());
@@ -46,23 +46,46 @@ function getPost(data) {
   image.setAttribute("src", `${data.post}`);
   image.setAttribute("class", "user-post-photo");
 
+  image.addEventListener("dblclick", function () {
+    if (data.liked === false) {
+      data.likes = data.likes + 1;
+
+      root.innerHTML = "";
+
+      data.liked = true;
+      for (let i = 0; i < posts.length; i++) {
+        createPost(posts[i]);
+        
+      }
+    }
+  });
+
   divOne.append(image);
   section.append(divOne);
 
   return section;
 }
 
-function getEngagements() {
+function getEngagements(data) {
   let section = document.createElement("section");
   let divOne = document.createElement("div");
 
   let heartImage = document.createElement("img");
+
   let commentImage = document.createElement("img");
   let dmImage = document.createElement("img");
 
   divOne.setAttribute("class", "user-engagements");
 
-  heartImage.setAttribute("src", "./src/images/icon-heart.png");
+  if (data.liked) {
+    heartImage.setAttribute("src", "./src/images/red-heart-icon.webp");
+
+
+  } else {
+    heartImage.setAttribute("src", "./src/images/icon-heart.png");
+  }
+
+  heartImage.setAttribute("background", "red");
   commentImage.setAttribute("src", "./src/images/icon-comment.png");
   dmImage.setAttribute("src", "./src/images/icon-dm.png");
 
@@ -81,41 +104,35 @@ function getLikes(data) {
 
   h2.setAttribute("class", "user-likes");
   h2.textContent = `${data.likes} likes`;
-  
 
   section.append(h2);
 
   return section;
 }
 
-function getAccountDetails(data){
+function getAccountDetails(data) {
+  let section = document.createElement("section");
+  let divOne = document.createElement("div");
+  let h3 = document.createElement("h3");
+  let p = document.createElement("p");
 
-    let section = document.createElement("section");
-    let divOne = document.createElement("div");
-    let h3 = document.createElement("h3");
-    let p = document.createElement("p");
+  divOne.setAttribute("class", "user-account-details");
+  h3.textContent = `${data.username}`;
+  p.textContent = `${data.comment}`;
 
-    divOne.setAttribute("class", "user-account-details");
-    h3.textContent = `${data.username}`;
-    p.textContent = `${data.comment}`;
+  divOne.append(h3);
+  divOne.append(p);
 
-    divOne.append(h3);
-    divOne.append(p);
+  section.append(divOne);
 
-    section.append(divOne);
-
-    return section;
+  return section;
 }
 
-function addDivider(){
+function addDivider() {
+  let footer = document.createElement("footer");
 
-    let footer = document.createElement("footer");
-    
-    return footer;
-
+  return footer;
 }
-
-
 
 for (let i = 0; i < posts.length; i++) {
   createPost(posts[i]);
