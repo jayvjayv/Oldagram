@@ -98,7 +98,7 @@ header{
 }
 
 /* Number of likes on the user's post */
-#user-likes{
+.user-likes{
     width: 343px;
     font-size: 13px;
     font-family: "Source Sans Pro";
